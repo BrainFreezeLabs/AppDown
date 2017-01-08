@@ -23,7 +23,7 @@ public class Master : MonoBehaviour {
     public bool vacaHabla;
     //static bool PrimeraVezCorre, PrimeraVezIncorre;
     static public string VecesJugadas, vecesCorrectasS, vecesErroneasS, pmilitrans, dificultad, conNoCon, esperada;
-    string[] propiedadesPalabra = new string[40];
+    string[] propiedadesPalabra = new string[193];
     public static int respuestasCorrectas;
 
     // Use this for initialization
@@ -85,6 +85,7 @@ public class Master : MonoBehaviour {
                     VecesQuePerroHabla += 1;
                     perroHabla = false;
                     InteligenciaArtificial.contadorPalabraPerro += 2;
+                    TextoEnGUI.iteradorPalabra++;
                     MaquinaDeEstados.estado = (int)MaquinaDeEstados.estados.inicioTiempoVacaHabla;
                 }
             }
@@ -102,6 +103,7 @@ public class Master : MonoBehaviour {
                     VecesQueVacaHabla += 1;
                     vacaHabla = false;
                     InteligenciaArtificial.contadorPalabraVaca += 2;
+                    TextoEnGUI.iteradorPalabra++;
                     MaquinaDeEstados.estado = (int)MaquinaDeEstados.estados.randomizandoPosicionBotones;
                 }
             }
@@ -224,59 +226,81 @@ public class Master : MonoBehaviour {
 
     void contains()
     {
-        for(int i = 0; i < BaseDeDatos.db1s.Length; i++)
+        bool gotIt = false;
+        for (int i = 0; i < BaseDeDatos.dbSize[0]; i++)
         {
-            if(TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db1s[i,0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar +1] == BaseDeDatos.db1s[i, 1])
+            if (gotIt)
+                break;
+            if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db1s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db1s[i, 1])
             {
-                propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[0];
+               propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[0];
+                gotIt = true;
             }
 
         }
-        for (int i = 0; i < BaseDeDatos.db2s.Length; i++)
+        for (int i = 0; i < BaseDeDatos.dbSize[1]; i++)
         {
+            if (gotIt)
+                break;
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db2s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db2s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[1];
+                gotIt = true;
             }
 
         }
-        for (int i = 0; i < BaseDeDatos.db3s.Length; i++)
+        for (int i = 0; i < BaseDeDatos.dbSize[2]; i++)
         {
+            if (gotIt)
+                break;
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db3s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db3s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[2];
+                gotIt = true;
             }
 
         }
-        for (int i = 0; i < BaseDeDatos.db4s.Length; i++)
+        for (int i = 0; i < BaseDeDatos.dbSize[3]; i++)
         {
+            if (gotIt)
+                break;
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db4s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db4s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[3];
+                gotIt = true;
             }
 
         }
-        for (int i = 0; i < BaseDeDatos.db5s.Length; i++)
+        for (int i = 0; i < BaseDeDatos.dbSize[4]; i++)
         {
+            if (gotIt)
+                break;
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db5s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db5s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[4];
+                gotIt = true;
             }
 
         }
-        for (int i = 0; i < BaseDeDatos.db6s.Length; i++)
+        for (int i = 0; i < BaseDeDatos.dbSize[5]; i++)
         {
+            if (gotIt)
+                break;
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db6s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db6s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[5];
+                gotIt = true;
             }
 
         }
-        for (int i = 0; i < BaseDeDatos.db7s.Length; i++)
+        for (int i = 0; i < BaseDeDatos.dbSize[6]; i++)
         {
+            if (gotIt)
+                break;
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db7s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db7s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[6];
+                gotIt = true;
             }
 
         }

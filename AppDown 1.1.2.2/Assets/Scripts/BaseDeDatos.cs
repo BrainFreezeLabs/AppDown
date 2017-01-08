@@ -14,6 +14,8 @@ static public class BaseDeDatos
     static string[] db6;
     static string[] db7;
 
+    static public int[] dbSize = new int[7];
+
     static public string[,] db1s;
     static public string[,] db2s;
     static public string[,] db3s;
@@ -62,6 +64,8 @@ static public class BaseDeDatos
         //string[] tomaDeDB6 = File.ReadAllLines(path + "db6.csv");
         //string[] tomaDeDB7 = File.ReadAllLines(path + "db7.csv");
         //Debug.Log("Bases de datos inicializadas");
+
+
 
         for(int i = 0; i < dbPropiedades.Length; i++)
         {
@@ -213,6 +217,20 @@ static public class BaseDeDatos
         db6 = tomaDeDB6;
         db7 = tomaDeDB7;
 
+
+        dbSize[0] = db1.Length;
+        dbSize[1] = db2.Length;
+        dbSize[2] = db3.Length;
+        dbSize[3] = db4.Length;
+        dbSize[4] = db5.Length;
+        dbSize[5] = db6.Length;
+        dbSize[6] = db7.Length;
+
+        for(int i = 0; i < 7; i++)
+        {
+            Debug.Log(dbSize[i].ToString());
+        }
+        
         string[,] _db1s = new string[db1.Length,2];
         string[,] _db2s = new string[db2.Length,2];
         string[,] _db3s = new string[db3.Length,2];

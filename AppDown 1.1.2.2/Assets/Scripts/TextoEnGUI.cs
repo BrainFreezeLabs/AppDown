@@ -60,13 +60,11 @@ public class TextoEnGUI : MonoBehaviour {
             {
                 GUI.Button(new Rect(50, 200, 200, 50), Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraPerro]);
                 salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraPerro];
-                iteradorPalabra++;
             }
             else if (master.vacaHabla)
             {
                 GUI.Button(new Rect(550, 200, 200, 50), Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraVaca]);
                 salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraVaca];
-                iteradorPalabra++;
             }
         }
         else
@@ -77,13 +75,11 @@ public class TextoEnGUI : MonoBehaviour {
                 {
                     GUI.Button(new Rect(50, 200, 200, 50), Master.InteligenciaArtificial.malo[Master.InteligenciaArtificial.contadorPalabraPerro]);
                     salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.malo[Master.InteligenciaArtificial.contadorPalabraPerro];
-                    iteradorPalabra++;
                 }
                 else if (master.vacaHabla)
                 {
                     GUI.Button(new Rect(550, 200, 200, 50), Master.InteligenciaArtificial.malo[Master.InteligenciaArtificial.contadorPalabraVaca]);
                     salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.malo[Master.InteligenciaArtificial.contadorPalabraVaca];
-                    iteradorPalabra++;
                 }
             }
             else if (Master.InteligenciaArtificial.jugadorRegular)
@@ -92,13 +88,11 @@ public class TextoEnGUI : MonoBehaviour {
                 {
                     GUI.Button(new Rect(50, 200, 200, 50), Master.InteligenciaArtificial.regular[Master.InteligenciaArtificial.contadorPalabraPerro]);
                     salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.regular[Master.InteligenciaArtificial.contadorPalabraPerro];
-                    iteradorPalabra++;
                 }
                 else if (master.vacaHabla)
                 {
                     GUI.Button(new Rect(550, 200, 200, 50), Master.InteligenciaArtificial.regular[Master.InteligenciaArtificial.contadorPalabraVaca]);
                     salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.regular[Master.InteligenciaArtificial.contadorPalabraVaca];
-                    iteradorPalabra++;
                 }
             }
             else if (Master.InteligenciaArtificial.jugadorBueno)
@@ -107,13 +101,11 @@ public class TextoEnGUI : MonoBehaviour {
                 {
                     GUI.Button(new Rect(50, 200, 200, 50), Master.InteligenciaArtificial.bueno[Master.InteligenciaArtificial.contadorPalabraPerro]);
                     salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.bueno[Master.InteligenciaArtificial.contadorPalabraPerro];
-                    iteradorPalabra++;
                 }
                 else if (master.vacaHabla)
                 {
                     GUI.Button(new Rect(550, 200, 200, 50), Master.InteligenciaArtificial.bueno[Master.InteligenciaArtificial.contadorPalabraVaca]);
                     salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.bueno[Master.InteligenciaArtificial.contadorPalabraVaca];
-                    iteradorPalabra++;
                 }
             }
         }
