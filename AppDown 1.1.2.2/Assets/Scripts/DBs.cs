@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 static public class DBs
 {
     static public string[][] DB1 = new string[][]
@@ -419,6 +420,18 @@ static public class DBs
     new string[]{"croqueta,croquepa"},
     new string[]{"platano,platamo"},
     new string[]{"frutero,fruteno"},
+
+    };
+
+
+
+
+
+    static public AudioClip[][] DB1Audio = new AudioClip[][]
+    {
+
+
+
 
     };
 }
