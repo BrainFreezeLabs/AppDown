@@ -61,19 +61,23 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Analizador.cs" />
+    <Compile Include="Assets\Scripts\Background_manager.cs" />
     <Compile Include="Assets\Scripts\BaseDeDatos.cs" />
     <Compile Include="Assets\Scripts\BotonesCorrectoIncorrecto.cs" />
     <Compile Include="Assets\Scripts\CapturaNombre.cs" />
     <Compile Include="Assets\Scripts\DBs.cs" />
     <Compile Include="Assets\Scripts\MaquinaDeEstados.cs" />
     <Compile Include="Assets\Scripts\Master.cs" />
-    <Compile Include="Assets\Scripts\Palabra.cs" />
-    <Compile Include="Assets\Scripts\Parcer.cs" />
-    <Compile Include="Assets\Scripts\Son.cs" />
     <Compile Include="Assets\Scripts\TextoEnGUI.cs" />
+    <Compile Include="Assets\Scripts\mImage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

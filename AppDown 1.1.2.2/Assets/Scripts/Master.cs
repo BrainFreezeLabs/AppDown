@@ -23,8 +23,6 @@ public class Master : MonoBehaviour {
     public bool vacaHabla;
     //static bool PrimeraVezCorre, PrimeraVezIncorre;
     static public string VecesJugadas, vecesCorrectasS, vecesErroneasS, pmilitrans, dificultad, conNoCon, esperada;
-    string dificultadPalabra;
-    int cambioPalabra; 
     string[] propiedadesPalabra = new string[40];
     public static int respuestasCorrectas;
 
@@ -231,8 +229,6 @@ public class Master : MonoBehaviour {
             if(TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db1s[i,0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar +1] == BaseDeDatos.db1s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[0];
-                dificultadPalabra = "Facil";
-                cambioPalabra = 1;
             }
 
         }
@@ -241,8 +237,6 @@ public class Master : MonoBehaviour {
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db2s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db2s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[1];
-                dificultadPalabra = "Facil";
-                cambioPalabra = 4;
             }
 
         }
@@ -251,8 +245,6 @@ public class Master : MonoBehaviour {
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db3s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db3s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[2];
-                dificultadPalabra = "Facil";
-                cambioPalabra = 5;
             }
 
         }
@@ -261,8 +253,6 @@ public class Master : MonoBehaviour {
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db4s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db4s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[3];
-                dificultadPalabra = "Medio";
-                cambioPalabra = 6;
             }
 
         }
@@ -271,8 +261,6 @@ public class Master : MonoBehaviour {
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db5s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db5s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[4];
-                dificultadPalabra = "Medio";
-                cambioPalabra = 7;
             }
 
         }
@@ -281,8 +269,6 @@ public class Master : MonoBehaviour {
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db6s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db6s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[5];
-                dificultadPalabra = "Dificil";
-                cambioPalabra = 8;
             }
 
         }
@@ -291,8 +277,6 @@ public class Master : MonoBehaviour {
             if (TextoEnGUI.salvandoPalabra[iteradorParaExportar] == BaseDeDatos.db7s[i, 0] && TextoEnGUI.salvandoPalabra[iteradorParaExportar + 1] == BaseDeDatos.db7s[i, 1])
             {
                 propiedadesPalabra[i] = BaseDeDatos.dbPropiedades[6];
-                dificultadPalabra = "Dificil";
-                cambioPalabra = 9;
             }
 
         }
@@ -310,8 +294,6 @@ public class Master : MonoBehaviour {
     void Parser() // pasar a una archivo aparte y ponerla como clase estatica!
     {
         contains();
-        Parcer.listaPalabras.Add(new Palabra(TextoEnGUI.salvandoPalabra[iteradorParaExportar]));
-        Analizador.Analisis();
         if(BotonesCorrectoIncorrecto.respuesta == "Correcta" || BotonesCorrectoIncorrecto.respuesta == "Incorrecta")
         {
             conNoCon = "Contestada";
@@ -338,13 +320,12 @@ public class Master : MonoBehaviour {
              new string[]{ "ID Participante", "Nombre del jugador","Hora de juego","Secuencia", "Numero de ensayo",
                            "Respuesta o no respuesta", "Palabra Input", "Palabra Output", "Real o Pseudopalabra",
                            "Respuesta input", "Respuesta output", "Tipo de respuesta", "Tiempo de respuesta",
-                           "Silabas de la palabra", "Palabra facil o dificil", "Tipo de cambio" },
+                           "Palabra original o modificada", "Palabra bisilabica o trisilabica", "Palabra facil o dificil", "Tipo de cambio" },
 
              new string[]{"",CapturaNombre.nombreJugador, FechaDelSistema,VecesJugadas,NumeroDeEnsayos.ToString(),conNoCon,
                  TextoEnGUI.salvandoPalabra[iteradorParaExportar], TextoEnGUI.salvandoPalabra[iteradorParaExportar +1],
                  propiedadesPalabra[iteradorParaExportar], esperada, BotonesCorrectoIncorrecto.respuestajugador,
-                 BotonesCorrectoIncorrecto.respuesta, milisegundosTranscurridos.ToString(),
-                 Parcer.listaPalabras[Analizador.index].numerosDeSilabas.ToString(),dificultadPalabra,cambioPalabra.ToString()}
+                 BotonesCorrectoIncorrecto.respuesta, milisegundosTranscurridos.ToString(),"","","",""}
          };
 
             //Sacando el tamaño del contenido
@@ -370,9 +351,7 @@ public class Master : MonoBehaviour {
              new string[]{ "", CapturaNombre.nombreJugador, FechaDelSistema, VecesJugadas, NumeroDeEnsayos.ToString(), conNoCon,
                  TextoEnGUI.salvandoPalabra[iteradorParaExportar], TextoEnGUI.salvandoPalabra[iteradorParaExportar+1],
                  propiedadesPalabra[iteradorParaExportar], esperada, BotonesCorrectoIncorrecto.respuestajugador,
-                 BotonesCorrectoIncorrecto.respuesta, milisegundosTranscurridos.ToString(),
-                 Parcer.listaPalabras[Analizador.index].numerosDeSilabas.ToString(),
-                 dificultadPalabra,cambioPalabra.ToString(), "veces bien contestadas =",
+                 BotonesCorrectoIncorrecto.respuesta, milisegundosTranscurridos.ToString(), "", "", "", "", "veces bien contestadas =",
                  vecesCorrectas.ToString(), "veces mal contestadas =", vecesErroneas.ToString(), "Dificultad =", dificultad}
          };
             //inicializando variable StringBuilder para alocar contenido
@@ -393,8 +372,7 @@ public class Master : MonoBehaviour {
              new string[]{ "", CapturaNombre.nombreJugador, FechaDelSistema, VecesJugadas, NumeroDeEnsayos.ToString(), conNoCon,
                  TextoEnGUI.salvandoPalabra[iteradorParaExportar], TextoEnGUI.salvandoPalabra[iteradorParaExportar+1],
                  propiedadesPalabra[iteradorParaExportar], esperada, BotonesCorrectoIncorrecto.respuestajugador,
-                 BotonesCorrectoIncorrecto.respuesta, milisegundosTranscurridos.ToString(),
-                 Parcer.listaPalabras[Analizador.index].numerosDeSilabas.ToString(), dificultadPalabra,cambioPalabra.ToString() }
+                 BotonesCorrectoIncorrecto.respuesta, milisegundosTranscurridos.ToString(), "", "", "", "" }
          };
             //inicializando variable StringBuilder para alocar contenido
             StringBuilder ExportadoDeStream = new StringBuilder();
