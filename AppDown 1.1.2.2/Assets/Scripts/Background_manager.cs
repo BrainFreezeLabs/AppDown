@@ -8,33 +8,25 @@ public class Background_manager : MonoBehaviour {
 
     public Image granja;
     public Image espacio;
+    public Image vaca;
+    public Image pinguino;
 
-    mImage [] fondos ;
+     mImage [] images ;
 
-    
-
-	// Use this for initialization
-	void Start () {
-
-        fondos = new mImage[] { new mImage(granja), new mImage(espacio) };
-
-        for (int i = 0; i < fondos.Length; ++i)
-        {
-            fondos[i].img.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width);
-            fondos[i].img.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Screen.height);
-        }
-
-        //granja.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width);
-        //granja.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Screen.height);
-
+    void Awake()
+    {
+        images = new mImage[] { new mImage(granja), new mImage(espacio), new mImage(vaca), new mImage(pinguino) };
     }
 
     // Update is called once per frame
-    void Update () {
-
-        //fondos[0].Rezise();
-        //Debug.Log("la granja tiene una resolucion de " + fondos[0].GetWidth() + "x" + fondos[1].GetHeight());
-
+    void Update() {
+        foreach (mImage img in images)
+        {
+            if (img.tag == "background")
+            {
+                img.Rezise();
+            }
+        }
     }
 
 

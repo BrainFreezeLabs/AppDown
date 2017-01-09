@@ -57,13 +57,15 @@ public class TextoEnGUI : MonoBehaviour {
         if (!Master.InteligenciaArtificial.jugadorDiagnosticado)
         {
             if (master.perroHabla)
-            {
+            {   
+                //TODO cambiar: cuando hable perro escalarlo y reproducir audio de la palabra
                 GUI.Button(new Rect(50, 200, 200, 50), Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraPerro]);
                 salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraPerro];
                 iteradorPalabra++;
             }
             else if (master.vacaHabla)
-            {
+            {   
+                //TODO cambiar: cuando hable vaca escalarla y reproducir audio de la palabra
                 GUI.Button(new Rect(550, 200, 200, 50), Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraVaca]);
                 salvandoPalabra[iteradorPalabra] = Master.InteligenciaArtificial.diagnostico[Master.InteligenciaArtificial.contadorPalabraVaca];
                 iteradorPalabra++;

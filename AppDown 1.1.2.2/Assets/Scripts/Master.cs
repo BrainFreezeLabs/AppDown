@@ -700,12 +700,12 @@ public class Master : MonoBehaviour {
 
             }
 
-            Debug.Log("comienza el arreglo Diagnostico");
-            for (int i = 0; i < diagnostico.Length; ++i)
-            {
-                if (diagnostico[i] != null)
-                Debug.Log(diagnostico[i] + " " + i);
-            }
+            //Debug.Log("comienza el arreglo Diagnostico");
+            //for (int i = 0; i < diagnostico.Length; ++i)
+            //{
+            //    if (diagnostico[i] != null)
+            //    Debug.Log(diagnostico[i] + " " + i);
+            //}
         }
 
         private void Malo()
@@ -765,12 +765,12 @@ public class Master : MonoBehaviour {
 
             }
 
-            Debug.Log("comienza el arreglo Malo");
-            for (int i = 0; i < malo.Length; ++i)
-            {
-                if (malo[i] != null)
-                    Debug.Log(malo[i] + " " + i);
-            }
+            //Debug.Log("comienza el arreglo Malo");
+            //for (int i = 0; i < malo.Length; ++i)
+            //{
+            //    if (malo[i] != null)
+            //        Debug.Log(malo[i] + " " + i);
+            //}
         }
 
         private void Regular()
@@ -830,12 +830,12 @@ public class Master : MonoBehaviour {
 
             }
 
-            Debug.Log("comienza el arreglo Regular");
-            for (int i = 0; i < regular.Length; ++i)
-            {
-                if (regular[i] != null)
-                    Debug.Log(regular[i] + " " + i);
-            }
+            //Debug.Log("comienza el arreglo Regular");
+            //for (int i = 0; i < regular.Length; ++i)
+            //{
+            //    if (regular[i] != null)
+            //        Debug.Log(regular[i] + " " + i);
+            //}
         }
 
         private void Bueno()
@@ -895,12 +895,12 @@ public class Master : MonoBehaviour {
 
             }
 
-            Debug.Log("comienza el arreglo Bueno");
-            for (int i = 0; i < diagnostico.Length; ++i)
-            {
-                if (bueno[i] != null)
-                    Debug.Log(bueno[i] + " " + i);
-            }
+            //Debug.Log("comienza el arreglo Bueno");
+            //for (int i = 0; i < diagnostico.Length; ++i)
+            //{
+            //    if (bueno[i] != null)
+            //        Debug.Log(bueno[i] + " " + i);
+            //}
         }
     }
 }

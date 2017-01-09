@@ -6,51 +6,52 @@ public class mImage {
 
     string _name;
     public Image img;
-    public float width;
-    private float height;
+    GameObject canvas;
+
+    private float _width;
+    public float width { set { _width = value; } get { return GetWidth(); } }
+
+    private float _height;
+    public float height { set { _height = value; } get { return GetHeight(); } }
+
     private string name;
     private bool visible;
+
+    public string tag;
     
 
 	public mImage(Image _img)
     {
         img = _img;
         name = img.name;
-        width = GetWidth();
-        height = GetHeight();
         visible = false;
+        canvas = GameObject.Find("Canvas" + name);
+        tag = img.transform.tag;
     }
 
     public void Rezise()
     {
-        if(Screen.width != width)
+        if (Screen.width != width)
             img.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Screen.width);
-        
-        if(Screen.height != height)
+
+        if (Screen.height != height)
+        {
             img.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Screen.height);
+        }
     }
 
     public float GetWidth()
     {
-        width = img.rectTransform.sizeDelta.x;
-        return width;
+        return img.rectTransform.sizeDelta.x; 
     }
 
     public float GetHeight()
     {
-        height = img.rectTransform.sizeDelta.y;
-        return height;
+        return img.rectTransform.sizeDelta.y;
     }
 
     public void SetActive(bool _active)
-    {
-        if(_active == true)
-        {
-            //img.
-        }
-        else
-        {
-
-        }
+    { 
+        canvas.SetActive(_active);
     }
 }
