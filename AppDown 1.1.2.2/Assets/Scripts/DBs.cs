@@ -423,15 +423,4 @@ static public class DBs
 
     };
 
-
-
-
-
-    static public AudioClip[][] DB1Audio = new AudioClip[][]
-    {
-
-
-
-
-    };
 }
